@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 
 // Initialize express app
 const app = express();
-
+//example
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
