@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 
-const NavLinks = () => {
+const NavLinksUrl = () => {
   const location = useLocation();
   const links = [
     { name: "Order Plants", url: "order-plants" },
@@ -24,4 +24,4 @@ const NavLinks = () => {
   );
 };
 
-export default NavLinks;
+export default NavLinksUrl;
