@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Prisha",
+    "email": "prisha2arora@gmail.com",
+    "password": "iamalone"
+  },
+  {
+    "id": 1,
+    "name": "Pirisha",
+    "email": "prishaarora.work@gmail.com",
+    "password": "abcabc"
+  },
+  {
+    "id": 1,
+    "name": "sukhbir",
+    "email": "sukhbirsinghsareenxa33@gmail.com",
+    "password": "asdf"
+  },
+  {
+    "id": 1,
+    "name": "satinder",
+    "email": "sukhbirsinghsareenxa33@gmail.com",
+    "password": "asdfghjkl"
+  },
+  {
+    "id": 1,
+    "name": "florayush",
+    "email": "florayush@sih.com",
+    "password": "asdfghjkl"
+  },
+  {
+    "id": 1,
+    "name": "test2",
+    "email": "test2@gmail.com",
+    "password": "test2"
+  },
+  {
+    "id": 1,
+    "name": "shushant",
+    "email": "shushant@gmail.com",
+    "password": "shu123"
+  }
+]
