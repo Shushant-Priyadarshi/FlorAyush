@@ -1,11 +1,10 @@
 import { useRef, useState } from "react";
 import { FaEyeSlash } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom"; 
 
 const Form = () => {
   const [isSignIn, setIsSignIn] = useState(true);
-  const [errorMessage, setErrorMessage] = useState(null);
   const [showPass, setShowPass] = useState(false);
 
   const email = useRef(null);
@@ -82,10 +81,7 @@ const Form = () => {
           </div>
 
           {/* Error Message */}
-          {errorMessage && (
-            <p className="text-sm text-red-500 font-medium">{errorMessage}</p>
-          )}
-
+        
           {/* Submit Button */}
           <button
             className="w-full p-4 bg-website-color-700 text-white font-semibold rounded-lg hover:bg-website-color-800 focus:outline-none focus:ring-4 focus:ring-website-color-700/50"

@@ -1,7 +1,7 @@
 import { IconPlant } from "@tabler/icons-react";
-import NavLinks from "./NavLinks";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import NavLinks from "./NavLinks";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,7 +59,7 @@ const Navbar = () => {
           isMenuOpen ? "flex" : "hidden"
         } lg:flex flex-col lg:flex-row lg:static absolute top-20 left-0 w-full lg:w-auto bg-black lg:bg-transparent items-center lg:gap-5 z-40`}
       >
-        <NavLinks />
+        <NavLinks/>
 
         <Link to="/auth" className="bg-gradient-to-r from-website-color-200 to-website-color-500 text-transparent !text-black py-1 px-5 rounded-md font-bold">
           Login
