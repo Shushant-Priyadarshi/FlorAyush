@@ -4,7 +4,7 @@ const Herosection = () => {
       <div className=" flex justify-center items-center min-h-screen px-4  text-white">
         {/* Background Video */}
         <video
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
           autoPlay
           loop
           muted
