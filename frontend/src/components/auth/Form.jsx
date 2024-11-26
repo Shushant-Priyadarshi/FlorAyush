@@ -35,7 +35,7 @@ const Form = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-black/70"></div>
 
       {/* Form Container */}
-      <div className="relative z-10 p-8 w-full max-w-md bg-black/80 rounded-lg shadow-lg">
+      <div className="relative z-10 p-8 w-full max-w-md bg-black/60 rounded-lg shadow-lg">
         {/* Brand Logo */}
         <h1 className="text-center text-3xl font-bold text-white mb-6">
           Flor<span className="bg-gradient-to-r from-website-color-200 to-website-color-700 bg-clip-text text-transparent">Ayush</span>

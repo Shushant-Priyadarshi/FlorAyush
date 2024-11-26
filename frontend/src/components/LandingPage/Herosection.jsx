@@ -10,7 +10,7 @@ const Herosection = () => {
           muted
         >
           <source src="/assets/video/example.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+        
         </video>
 
         {/* Overlay for video tint */}

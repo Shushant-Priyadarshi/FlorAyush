@@ -1,8 +1,10 @@
 
-
+import MentorPage from "../components/Mentors/MentorPage"
 const Mentors = () => {
   return (
-    <div>Mentors</div>
+    <div>
+      <MentorPage/>
+    </div>
   )
 }
 
