@@ -1,5 +1,5 @@
 
-import Herosection from "../components/LandingPage/HeroSection";
+import Herosection from "../components/LandingPage/Herosection";
 import HowitWorks from "../components/LandingPage/HowitWorks";
 import Impact from "../components/LandingPage/Impact";
 import MarqueeComponet from "../components/LandingPage/MarqueeComponent"

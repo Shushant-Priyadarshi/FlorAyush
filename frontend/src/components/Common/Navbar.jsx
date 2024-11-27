@@ -1,7 +1,7 @@
 import { IconPlant } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import NavLinksUrl from "./NavLinksUrl";
+import NavLinksUrl from "./NavlinksUrl";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

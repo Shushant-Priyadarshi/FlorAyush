@@ -9,7 +9,7 @@ const TeamCard = ({name,role,linkedIn,instagram,github}) => {
     <div className="flex flex-col gap-2 border border-website-color-500 w-56 items-center px-1 py-3 rounded-xl">
       <div className=" rounded-md">
         <img
-          src="/assets/images/shushant.jpg"
+          src={`/assets/images/${name.split(" ")[0].toLowerCase()}.jpg`}
           alt=""
           className="w-40 rounded-md"
         />
