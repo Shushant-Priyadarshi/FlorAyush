@@ -9,7 +9,7 @@ import Form from "./components/auth/Form";
 
 function App() {
   const About = lazy(() => import("./Pages/About"));
-  const OrderPlants = lazy(() => import("./Pages/OrderPlants"));
+  const OrderPlantsPage = lazy(() => import("./Pages/OrderPlantsPage"));
   const ExplorePlants = lazy(() => import("./Pages/ExplorePlants"));
   const Mentors = lazy(() => import("./Pages/Mentors"));
   const Home = lazy(()=>import("./Pages/Home"))
@@ -21,7 +21,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/order-plants" element={<OrderPlants />} />
+              <Route path="/order-plants" element={<OrderPlantsPage />} />
               <Route path="/explore-plants" element={<ExplorePlants />} />
               <Route path="/mentors" element={<Mentors />} />
               <Route path="/auth" element={<Form />} />
