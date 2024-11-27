@@ -99,10 +99,10 @@ export const teamData =[
     github:"https://github.com/Shushant-Priyadarshi"
   },
   {
-    name:"Sukhbeer Singh Sareen",
+    name:"Sukhbir Singh Sareen",
     role:"Backend Developer",
-    linkedIn:"https://www.linkedin.com/in/shushant-priyadarshi/",
-    instagram:"https://www.instagram.com/5hu5hant/",
+    linkedIn:"https://in.linkedin.com/in/sukhbir-singh-sareen-93a358281",
+    instagram:"https://www.instagram.com/sukhbir_sareen/?hl=en",
     github:"https://github.com/Shushant-Priyadarshi"
   }
 ]
