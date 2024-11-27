@@ -76,7 +76,7 @@ const Form = () => {
               className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-gray-400 hover:text-white"
               onClick={handleToggleShowPassword}
             >
-              {showPass ? <FaEyeSlash size={18} /> : <IoEyeSharp size={20} />}
+              {showPass ?  <IoEyeSharp size={20} /> :<FaEyeSlash size={18} />}
             </div>
           </div>
 
