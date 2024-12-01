@@ -1,22 +1,75 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { FaEyeSlash } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
-import { Link } from "react-router-dom"; 
+import { Link, useNavigate } from "react-router-dom";
 
 const Form = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [showPass, setShowPass] = useState(false);
-
-  const email = useRef(null);
-  const password = useRef(null);
+  const navigate= useNavigate();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
 
   const toggleSignUp = () => {
     setIsSignIn(!isSignIn);
+    setError(""); // Clear errors when toggling
   };
 
   const handleToggleShowPassword = () => {
     setShowPass(!showPass);
   };
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const apiUrl = isSignIn
+      ? "http://localhost:8082/auth/login" 
+      : "http://localhost:8082/auth/register"; 
+  
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(
+          isSignIn
+            ? { email: formData.email, password: formData.password }
+            : formData 
+        ),
+      });
+  
+      const data = await response.json();
+  
+      if (!response.ok) throw new Error(data.message || "Something went wrong");
+  
+      if (isSignIn) {
+        // Handle login: Save the token to localStorage
+        console.log(data?.token);
+        localStorage.setItem("jwt", data?.token);
+        localStorage.setItem("auth", "true");
+        navigate("/"); // Navigate to home or dashboard
+      } else {
+        // Handle signup: Show success message and navigate to login
+        setError(data?.message); // Display the success message from the backend
+      }
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+  
+
+   
 
   return (
     <div className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden">
@@ -36,39 +89,41 @@ const Form = () => {
 
       {/* Form Container */}
       <div className="relative z-10 p-8 w-full max-w-md bg-black/60 rounded-lg shadow-lg">
-        {/* Brand Logo */}
         <h1 className="text-center text-3xl font-bold text-white mb-6">
           Flor<span className="bg-gradient-to-r from-website-color-200 to-website-color-700 bg-clip-text text-transparent">Ayush</span>
         </h1>
 
-        <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
-          {/* Form Title */}
+        <form onSubmit={handleSubmit} className="space-y-6">
           <h2 className="text-2xl font-semibold text-white">
             {isSignIn ? "Sign In" : "Sign Up"}
           </h2>
 
-          {/* Name Input (Visible only for Sign Up) */}
           {!isSignIn && (
             <input
+              name="name"
               placeholder="Name"
+              value={formData.name}
+              onChange={handleInputChange}
               type="text"
               className="w-full p-4 bg-gray-800 text-white placeholder-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-website-color-700"
             />
           )}
 
-          {/* Email Input */}
           <input
+            name="email"
             placeholder="Email Address"
-            ref={email}
+            value={formData.email}
+            onChange={handleInputChange}
             type="email"
             className="w-full p-4 bg-gray-800 text-white placeholder-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-website-color-700"
           />
 
-          {/* Password Input */}
           <div className="relative">
             <input
+              name="password"
               placeholder="Password"
-              ref={password}
+              value={formData.password}
+              onChange={handleInputChange}
               type={showPass ? "text" : "password"}
               className="w-full p-4 bg-gray-800 text-white placeholder-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-website-color-700"
             />
@@ -76,20 +131,21 @@ const Form = () => {
               className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-gray-400 hover:text-white"
               onClick={handleToggleShowPassword}
             >
-              {showPass ?  <IoEyeSharp size={20} /> :<FaEyeSlash size={18} />}
+              {showPass ? <IoEyeSharp size={20} /> : <FaEyeSlash size={18} />}
             </div>
           </div>
 
-          {/* Error Message */}
-        
-          {/* Submit Button */}
+          {error && (
+            <p className="text-white font-semibold text-md text-center">{error}</p>
+          )}
+
           <button
+            type="submit"
             className="w-full p-4 bg-website-color-700 text-white font-semibold rounded-lg hover:bg-website-color-800 focus:outline-none focus:ring-4 focus:ring-website-color-700/50"
           >
             {isSignIn ? "Sign In" : "Sign Up"}
           </button>
 
-          {/* Toggle Sign Up/Sign In */}
           <p
             className="text-sm text-gray-400 hover:underline cursor-pointer text-center"
             onClick={toggleSignUp}
@@ -99,7 +155,6 @@ const Form = () => {
               : "Already have an account? Sign in now."}
           </p>
 
-          {/* Go Home Button */}
           <div className="text-center mt-4">
             <Link
               to="/"

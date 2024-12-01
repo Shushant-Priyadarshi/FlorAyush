@@ -7,6 +7,7 @@ const NavLinksUrl = () => {
     { name: "Explore Plants", url: "explore-plants" },
     { name: "Mentors", url: "mentors" },
     { name: "About Us", url: "about" },
+    {name:"Cart",url:"cart"}
   ];
 
   return (

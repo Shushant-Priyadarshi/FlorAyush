@@ -18,8 +18,7 @@ const Card = ({ name, description }) => {
         {description}
       </div>
 
-      {/* Explore More */}
-      <div className="text-website-color-600 text-md">Explore More +</div>
+     
     </div>
   );
 };

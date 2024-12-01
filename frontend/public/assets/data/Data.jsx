@@ -14,51 +14,19 @@ export const footerLinks = [
 ];
 
 export const marqueeData = [
-  {
-    name: "Tulsi",
-    description: "Respiratory Issues, Cold",
-  },
-  {
-    name: "Neem",
-    description: "Skin Disorders, Blood Purification",
-  },
-  {
-    name: "Ashwagandha",
-    description: "Stress Relief, Immune Support",
-  },
-  {
-    name: "Amla",
-    description: "Digestion, Hair Growth, Vitamin C Source",
-  },
-  {
-    name: "Brahmi",
-    description: "Memory Enhancement, Stress Reduction",
-  },
-  {
-    name: "Ginger",
-    description: "Nausea Relief, Anti-inflammatory",
-  },
-  {
-    name: "Turmeric",
-    description: "Wound Healing, Anti-inflammatory",
-  },
-  {
-    name: "Aloe Vera",
-    description: "Skin Health, Digestive Aid",
-  },
-  {
-    name: "Shatavari",
-    description: "Hormonal Balance, Women's Health",
-  },
-  {
-    name: "Arjuna",
-    description: "Heart Health, Blood Pressure",
-  },
-  {
-    name: "Moringa",
-    description: "Nutrient-Rich, Blood Sugar Regulation",
-  },
+  { name: "Tulsi", description: "Respiratory Issues, Cold", price: 100 },
+  { name: "Neem", description: "Skin Disorders, Blood Purification", price: 150 },
+  { name: "Ashwagandha", description: "Stress Relief, Immune Support", price: 200 },
+  { name: "Amla", description: "Digestion, Hair Growth, Vitamin C Source", price: 120 },
+  { name: "Brahmi", description: "Memory Enhancement, Stress Reduction", price: 180 },
+  { name: "Ginger", description: "Nausea Relief, Anti-inflammatory", price: 90 },
+  { name: "Turmeric", description: "Wound Healing, Anti-inflammatory", price: 130 },
+  { name: "Aloe Vera", description: "Skin Health, Digestive Aid", price: 110 },
+  { name: "Shatavari", description: "Hormonal Balance, Women's Health", price: 250 },
+  { name: "Arjuna", description: "Heart Health, Blood Pressure", price: 300 },
+  { name: "Moringa", description: "Nutrient-Rich, Blood Sugar Regulation", price: 170 },
 ];
+
 
 export const impactData = [
   {

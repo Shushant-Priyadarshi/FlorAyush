@@ -6,6 +6,10 @@ import NotFound from "./components/Common/NotFound";
 import Loader from "./components/Common/Loader";
 import { lazy, Suspense } from "react";
 import Form from "./components/auth/Form";
+import ProtectedRoute from "./utils/ProtectedRoutes";
+import CartPage from "./components/cart/CartPage";
+import { CartProvider } from "./components/cart/CartContext";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const About = lazy(() => import("./Pages/About"));
@@ -16,19 +20,22 @@ function App() {
   return (
     <MantineProvider>
       <BrowserRouter>
+      <CartProvider>
         <MainLayout>
           <Suspense fallback={<Loader />}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/order-plants" element={<OrderPlantsPage />} />
-              <Route path="/explore-plants" element={<ExplorePlants />} />
-              <Route path="/mentors" element={<Mentors />} />
+              <Route path="/order-plants"  element={<ProtectedRoute element={<OrderPlantsPage/>}/>} />
+              <Route path="/explore-plants" element={<ProtectedRoute element={<ExplorePlants />}/>} />
+              <Route path="/mentors" element={<ProtectedRoute element={<Mentors />}/>} />
+              <Route path="/cart" element={<ProtectedRoute element={<CartPage />}/>} />
               <Route path="/auth" element={<Form />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </MainLayout>
+        </CartProvider>
       </BrowserRouter>
     </MantineProvider>
   );
@@ -40,6 +47,7 @@ function MainLayout({ children }) {
 
   return (
     <div className="bg-black min-h-[100vh] text-white flex flex-col">
+      <Toaster/>
       {!hideNavAndFooter && <Navbar />}
       <div className="flex-grow">{children}</div>
       {!hideNavAndFooter && <Footer />}

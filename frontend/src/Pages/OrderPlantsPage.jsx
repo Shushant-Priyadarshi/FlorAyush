@@ -1,6 +1,7 @@
-import Card from "../components/LandingPage/Card"
+
 import { marqueeData } from "../../public/assets/data/Data"
-import OrderPants from "../components/OrderPlants/OrderPants"
+import OrderPants from "../components/OrderPlants/OrderPlants"
+import CartCard from "../components/cart/cartCard"
 
 
 const OrderPlantsPage = () => {
@@ -10,7 +11,7 @@ const OrderPlantsPage = () => {
       <div>
       <div className="flex flex-wrap justify-center gap-10">
       {marqueeData.map((data, index) => (
-        <Card key={index} {...data} />
+        <CartCard key={index} {...data} />
       ))}
       </div>
       </div>
