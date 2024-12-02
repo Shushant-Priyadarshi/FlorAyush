@@ -27,6 +27,12 @@ const CartPage = () => {
                 >
                   Remove
                 </button>
+                <button
+                  className="mt-3 text-sm bg-green-500 px-3 py-1 text-white font-semibold rounded-lg hover:bg-green-700"
+                  onClick={() => removeFromCart(item.name)}
+                >
+                  Trace
+                </button>
               </div>
             ))}
           </div>

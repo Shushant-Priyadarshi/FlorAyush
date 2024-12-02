@@ -30,9 +30,12 @@ const Herosection = () => {
             terrains of medicinal plants, brought to life in stunning detail,
             and experience nature like never before.
           </p>
-          <button className="hover:drop-shadow-[0_5px_15px_rgba(64, 242, 87, 0.8)] mt-6 px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-website-color-200 to-website-color-500 text-black font-semibold text-sm sm:text-lg rounded-lg shadow-lg hover:bg-azure-radiance-800 transition-all duration-300">
-            Enter Metaverse
-          </button>
+          <button
+  onClick={() => window.location.href = "florayush://"}
+  className="hover:drop-shadow-[0_5px_15px_rgba(64, 242, 87, 0.8)] mt-6 px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-website-color-200 to-website-color-500 text-black font-semibold text-sm sm:text-lg rounded-lg shadow-lg hover:bg-azure-radiance-800 transition-all duration-300"
+>
+  Enter Metaverse
+</button>
         </div>
 
         {/* Glowing Effects */}
