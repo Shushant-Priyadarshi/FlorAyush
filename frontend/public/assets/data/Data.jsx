@@ -1,7 +1,7 @@
 export const footerLinks = [
   {
     title: "Team",
-    links: ["Aarav Arora", "Sukhbeer Singh Sareen", "Shushant Priyadarshi"],
+    links: ["Aarav Arora", "Sukhbir Singh Sareen", "Shushant Priyadarshi"],
   },
   {
     title: "Project",

@@ -1,7 +1,7 @@
 
 import { marqueeData } from "../../public/assets/data/Data"
 import OrderPants from "../components/OrderPlants/OrderPlants"
-import CartCard from "../components/cart/cartCard"
+import CartCard from "../components/cart/CartCard"
 
 
 const OrderPlantsPage = () => {
