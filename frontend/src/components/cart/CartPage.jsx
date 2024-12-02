@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useCart } from "./CartContext";
 
 const CartPage = () => {
@@ -27,12 +28,12 @@ const CartPage = () => {
                 >
                   Remove
                 </button>
-                <button
+                <Link to={"/trace"}
                   className="mt-3 text-sm bg-green-500 px-3 py-1 text-white font-semibold rounded-lg hover:bg-green-700"
-                  onClick={() => removeFromCart(item.name)}
+                 
                 >
                   Trace
-                </button>
+                </Link>
               </div>
             ))}
           </div>

@@ -7,9 +7,11 @@ import Loader from "./components/Common/Loader";
 import { lazy, Suspense } from "react";
 import Form from "./components/auth/Form";
 import ProtectedRoute from "./utils/ProtectedRoutes";
-import CartPage from "./components/cart/CartPage";
+  
 import { CartProvider } from "./components/cart/CartContext";
 import { Toaster } from "react-hot-toast";
+import Cart from "./Pages/Cart";
+import Trace from "./Pages/Trace";
 
 function App() {
   const About = lazy(() => import("./Pages/About"));
@@ -29,7 +31,8 @@ function App() {
               <Route path="/order-plants"  element={<ProtectedRoute element={<OrderPlantsPage/>}/>} />
               <Route path="/explore-plants" element={<ProtectedRoute element={<ExplorePlants />}/>} />
               <Route path="/mentors" element={<ProtectedRoute element={<Mentors />}/>} />
-              <Route path="/cart" element={<ProtectedRoute element={<CartPage />}/>} />
+              <Route path="/cart" element={<ProtectedRoute element={<Cart />}/>} />
+              <Route path="/trace" element={<ProtectedRoute element={<Trace />}/>} />
               <Route path="/auth" element={<Form />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
