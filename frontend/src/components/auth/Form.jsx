@@ -33,8 +33,8 @@ const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const apiUrl = isSignIn
-      ? "http://localhost:8082/auth/login" 
-      : "http://localhost:8082/auth/register"; 
+      ? "http://localhost:8080/auth/login" 
+      : "http://localhost:8080/auth/register"; 
   
     try {
       const response = await fetch(apiUrl, {
